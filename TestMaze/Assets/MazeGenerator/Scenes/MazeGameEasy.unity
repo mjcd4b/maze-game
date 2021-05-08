@@ -570,7 +570,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 3586668063914190365, guid: 312eafd1951023149942c912ac138d94, type: 3}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -593,11 +593,11 @@ RectTransform:
   - {fileID: 1405135910}
   - {fileID: 1100162320}
   - {fileID: 815220699}
+  - {fileID: 1274136365}
   - {fileID: 1505290113}
   - {fileID: 1983329946}
   - {fileID: 1489180471}
   - {fileID: 1992726736}
-  - {fileID: 1274136365}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1129,11 +1129,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 726681630}
-  m_RootOrder: 7
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 250}
+  m_AnchoredPosition: {x: 0, y: 254}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1274136366
@@ -1172,10 +1172,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 90
+    m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 9
+    m_MinSize: 7
     m_MaxSize: 95
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -1552,7 +1552,7 @@ Transform:
   m_LocalScale: {x: 1.6763334, y: 1.6763334, z: 1.6763334}
   m_Children: []
   m_Father: {fileID: 726681630}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1505290114
 MonoBehaviour:
@@ -1796,7 +1796,7 @@ RectTransform:
   - {fileID: 1347839691}
   - {fileID: 1238764396}
   m_Father: {fileID: 726681630}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1845,7 +1845,7 @@ Transform:
   m_LocalScale: {x: 1.6763334, y: 1.6763334, z: 1.6763334}
   m_Children: []
   m_Father: {fileID: 726681630}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1996853409
 GameObject:
@@ -2127,7 +2127,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6096471161165235069, guid: 0c62508f35a6ba848a6af61157570cf1, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6096471161165235069, guid: 0c62508f35a6ba848a6af61157570cf1, type: 3}
       propertyPath: m_AnchorMax.x

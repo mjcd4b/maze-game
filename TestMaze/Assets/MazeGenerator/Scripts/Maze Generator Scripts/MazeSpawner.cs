@@ -41,38 +41,26 @@ public class MazeSpawner : MonoBehaviour
 	void Start()
 	{
 
-		//xMid yMid used to calculate center of maze where player spawns.
-		float xMid;
-		float zMid;
-
 		//If / Else If statments that determine size of maze based on selected difficulty
 		if (DifficultyEasy)
 		{
 			Rows = 5;
 			Columns = 5;
-			xMid = 8;
-			zMid = 8;
 		}
 		else if (DifficultyMedium)
 		{
 			Rows = 10;
 			Columns = 10;
-			xMid = 16;
-			zMid = 16;
 		}
 		else if (DifficultyHard)
 		{
 			Rows = 15;
 			Columns = 15;
-			xMid = 28;
-			zMid = 28;
 		}
 		else
 		{
 			Rows = 5;
 			Columns = 5;
-			xMid = 8;
-			zMid = 8;
 		}
 
 		//switch used to create new maze
@@ -85,11 +73,6 @@ public class MazeSpawner : MonoBehaviour
 
 		//Call Generate Maze
 		mMazeGenerator.GenerateMaze();
-
-		//Create player object in center of maze.
-		GameObject player;
-		player = Instantiate(Player, new Vector3(xMid, 1, zMid), Quaternion.Euler(0, 0, 0)) as GameObject;
-		player.transform.parent = transform;
 
 		//Nexted for loops to go through each cell of maze and create objects.
 		for (int row = 0; row < Rows; row++)
@@ -149,6 +132,13 @@ public class MazeSpawner : MonoBehaviour
 					tmp = Instantiate(TrapPrefab, new Vector3(x, 0, z), Quaternion.Euler(0, 0, 0)) as GameObject;
 					tmp.transform.parent = transform;
 					tmp = Instantiate(TrapTrigger, new Vector3(x, (float)0.3, z), Quaternion.Euler(0, 0, 0)) as GameObject;
+					tmp.transform.parent = transform;
+				}
+
+				//Spawns player
+				if (cell.IsPlayerSpawn)
+                {
+					tmp = Instantiate(Player, new Vector3(x, 1, z), Quaternion.Euler(0, 0, 0)) as GameObject;
 					tmp.transform.parent = transform;
 				}
 			}

@@ -22,4 +22,5 @@ public class MazeCell
     public bool WallBack = false;
     public bool IsGoal = false;
     public bool IsTrap = false;
+    public bool IsPlayerSpawn = false;
 }

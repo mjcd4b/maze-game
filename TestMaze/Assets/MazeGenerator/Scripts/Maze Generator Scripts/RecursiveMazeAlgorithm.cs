@@ -6,9 +6,24 @@ public class RecursiveMazeAlgorithm : MazeGenerator //RecursiveMazeAlgorithm inh
 	//The constructor randomly assigns cells the IsGoal and IsTrap values
 	public RecursiveMazeAlgorithm(int rows, int columns, bool easy, bool med, bool hard) : base(rows, columns)
 	{
+		//Randomly assigns player spawn point in map.
+		int playerRow = Random.Range(1, rows);
+		int playerColumn = Random.Range(1, columns);
+		GetMazeCell(playerRow, playerColumn).IsPlayerSpawn = true;
+
 		//Randomly assign goal in maze.
 		int goalRow = Random.Range(1, rows);
 		int goalColumn = Random.Range(1, columns);
+
+		if (GetMazeCell(goalRow, goalColumn).IsPlayerSpawn == true)
+		{
+			while (GetMazeCell(goalRow, goalColumn).IsPlayerSpawn == true)
+			{
+				goalRow = Random.Range(1, rows);
+				goalColumn = Random.Range(1, columns);
+			}
+		}
+
 		GetMazeCell(goalRow, goalColumn).IsGoal = true;
 
 		//Randomly assigns traps in the maze.
@@ -20,8 +35,12 @@ public class RecursiveMazeAlgorithm : MazeGenerator //RecursiveMazeAlgorithm inh
         {
 			for(int i = 0; i < 3; i++)
             {
-				trapRow = Random.Range(1, rows);
-				trapColumn = Random.Range(1, columns);
+				do
+				{
+					trapRow = Random.Range(1, rows);
+					trapColumn = Random.Range(1, columns);
+				} while (GetMazeCell(trapRow, trapColumn).IsPlayerSpawn == true || GetMazeCell(trapRow, trapColumn).IsGoal == true);
+
 				GetMazeCell(trapRow, trapColumn).IsTrap = true;
 			}
         }
@@ -30,8 +49,12 @@ public class RecursiveMazeAlgorithm : MazeGenerator //RecursiveMazeAlgorithm inh
 		{
 			for (int i = 0; i < 5; i++)
 			{
-				trapRow = Random.Range(1, rows);
-				trapColumn = Random.Range(1, columns);
+				do
+				{
+					trapRow = Random.Range(1, rows);
+					trapColumn = Random.Range(1, columns);
+				} while (GetMazeCell(trapRow, trapColumn).IsPlayerSpawn == true || GetMazeCell(trapRow, trapColumn).IsGoal == true);
+
 				GetMazeCell(trapRow, trapColumn).IsTrap = true;
 			}
 		}
